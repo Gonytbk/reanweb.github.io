@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style_carusel.css">
+</head>
+<body>
+    <div class="header">
+        Fashion
+    </div>
+    <!--code Menu Dropdown-->
+    <ul>
+        <li><a href="index.html">All Product</a></li>
+        <li><a href="promotion.html">Promotion</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Women</a>
+            <div class="dropdown-content">
+              <a href="#">Clothing</a>
+              <a href="#">Shoes</a>
+              <a href="#">Accessories</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Men</a>
+            <div class="dropdown-content">
+              <a href="#">Clothing</a>
+              <a href="#">Shoes</a>
+              <a href="#">Accessories</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Kid</a>
+            <div class="dropdown-content">
+              <a href="#">Clothing</a>
+              <a href="#">Shoes</a>
+              <a href="#">Accessories</a>
+            </div>
+        </li>
+    </ul>
+<!--add carusel-->
+<div class="row">
+    <div class="col-6">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="image/product (2).jpg" style="width:100%">
+              <div class="text">Caption Text</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="image/product (3).jpg" style="width:100%">
+              <div class="text">Caption Two</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="image/product (26).jpg" style="width:100%">
+              <div class="text">Caption Three</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+    </div>
+    <div class="col-3">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, ab fugit vero obcaecati veritatis dolore magnam non veniam labore ducimus, inventore ipsam reiciendis, recusandae iusto nulla qui sed suscipit voluptatum?</p>
+    </div>
+    <div class="col-3">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, ab fugit vero obcaecati veritatis dolore magnam non veniam labore ducimus, inventore ipsam reiciendis, recusandae iusto nulla qui sed suscipit voluptatum?</p>
+    </div>
+</div>
+<!--end carusel-->
+<div class="row">
+    <div class="col-4">
+        <img src="image/product (12).jpg">
+    </div>
+    <div class="col-4">
+        <img src="image/product (13).jpg">
+    </div>
+    <div class="col-4">
+        <img src="image/sport-life-2.jpg">
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <img src="image/product (5).jpg">
+    </div>
+    <div class="col-3">
+        <img src="image/product (6).jpg">
+    </div>
+    <div class="col-3">
+        <img src="image/product (7).jpg">
+    </div>
+    <div class="col-3">
+        <img src="image/Sport-Life-Sneaker (2)-cr-450x672.jpg">
+    </div>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+    
+</body>
+</html>
